@@ -1,0 +1,35 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "👷 Styling, testing, and building Solidarity..."
+
+# Run pretty-quick to format code
+echo "🎨 Formatting your code..."
+pnpx pretty-quick --staged || (
+  echo "🚨 Code formatting failed. Please fix formatting errors and try again."
+  exit 1
+)
+
+# Run lint to lint code
+echo "🔍 Linting client-side code..."
+(cd client && pnpm run lint) || (
+  echo "🚨 Client linting failed. Please fix linting errors and try again."
+  exit 1
+)
+
+# Run lint-
+echo "🔍 Linting server-side code..."
+(cd server && pnpm run lint) || (
+  echo "🚨 Server linting failed. Please fix linting errors and try again."
+  exit 1
+)
+
+# Build client
+echo "🏗️ Building client..."
+(cd client && pnpm run build) || (
+  echo "🚨 Client build failed. Please fix build errors and try again."
+  exit 1
+)
+
+# All checks passed
+echo "✅ All checks passed. Committing code..."
