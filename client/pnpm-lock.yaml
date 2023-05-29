@@ -40,6 +40,12 @@ dependencies:
   tailwindcss-animate:
     specifier: ^1.0.5
     version: 1.0.5(tailwindcss@3.3.1)
+  tweetnacl:
+    specifier: ^1.0.3
+    version: 1.0.3
+  tweetnacl-util:
+    specifier: ^0.15.1
+    version: 0.15.1
   typescript:
     specifier: 5.0.3
     version: 5.0.3
@@ -11862,6 +11868,20 @@ packages:
     dependencies:
       tslib: 1.14.1
       typescript: 5.0.3
+
+  /tweetnacl-util@0.15.1:
+    resolution:
+      {
+        integrity: sha512-RKJBIj8lySrShN4w6i/BonWp2Z/uxwC3h4y7xsRrpP59ZboCd0GpEVsOnMDYLMmKBpYhb5TgHzZXy7wTfYFBRw==,
+      }
+    dev: false
+
+  /tweetnacl@1.0.3:
+    resolution:
+      {
+        integrity: sha512-6rt+RN7aOi1nGMyC4Xa5DdYiukl2UWCbcJft7YhxReBGQD7OAM8Pbxw6YMo4r2diNEA8FEmu32YOn9rhaiE5yw==,
+      }
+    dev: false
 
   /type-check@0.3.2:
     resolution:
