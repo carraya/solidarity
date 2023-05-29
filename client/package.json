@@ -14,6 +14,7 @@
     "@types/node": "18.15.11",
     "@types/react": "18.0.31",
     "@types/react-dom": "18.0.11",
+    "@types/uuid": "^9.0.1",
     "class-variance-authority": "^0.5.1",
     "clsx": "^1.2.1",
     "eslint": "8.37.0",
@@ -26,7 +27,8 @@
     "tailwindcss-animate": "^1.0.5",
     "tweetnacl": "^1.0.3",
     "tweetnacl-util": "^0.15.1",
-    "typescript": "5.0.3"
+    "typescript": "5.0.3",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.0.2",

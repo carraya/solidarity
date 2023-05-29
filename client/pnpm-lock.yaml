@@ -10,6 +10,9 @@ dependencies:
   "@types/react-dom":
     specifier: 18.0.11
     version: 18.0.11
+  "@types/uuid":
+    specifier: ^9.0.1
+    version: 9.0.1
   class-variance-authority:
     specifier: ^0.5.1
     version: 0.5.1(typescript@5.0.3)
@@ -49,6 +52,9 @@ dependencies:
   typescript:
     specifier: 5.0.3
     version: 5.0.3
+  uuid:
+    specifier: ^9.0.0
+    version: 9.0.0
 
 devDependencies:
   "@storybook/addon-essentials":
@@ -4250,6 +4256,13 @@ packages:
         integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==,
       }
     dev: true
+
+  /@types/uuid@9.0.1:
+    resolution:
+      {
+        integrity: sha512-rFT3ak0/2trgvp4yYZo5iKFEPsET7vKydKF+VRCxlQ9bpheehyAJH89dAkaLEq/j/RZXJIqcgsmPJKUP1Z28HA==,
+      }
+    dev: false
 
   /@types/yargs-parser@21.0.0:
     resolution:
@@ -12192,6 +12205,14 @@ packages:
         integrity: sha512-dsNgbLaTrd6l3MMxTtouOCFw4CBFc/3a+GgYA2YyrJvyQ1u6q4pcu3ktLoUZ/VN/Aw9WsauazbgsgdfVWgAKQg==,
       }
     dev: true
+
+  /uuid@9.0.0:
+    resolution:
+      {
+        integrity: sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==,
+      }
+    hasBin: true
+    dev: false
 
   /v8-to-istanbul@9.1.0:
     resolution:
