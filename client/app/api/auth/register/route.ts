@@ -8,7 +8,7 @@ export async function POST(req: NextRequest) {
       { status: 405 }
     );
   }
-  // console.log(req.body);
+
   const userData = (await req.json()) as any;
   const { userId, password } = userData;
 
