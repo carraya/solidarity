@@ -1,5 +1,10 @@
 lockfileVersion: "6.0"
 
+dependencies:
+  gun:
+    specifier: ^0.2020.1239
+    version: 0.2020.1239
+
 devDependencies:
   husky:
     specifier: ^8.0.0
@@ -12,6 +17,45 @@ devDependencies:
     version: 3.1.3(prettier@2.8.7)
 
 packages:
+  /@peculiar/asn1-schema@2.3.6:
+    resolution:
+      {
+        integrity: sha512-izNRxPoaeJeg/AyH8hER6s+H7p4itk+03QCa4sbxI3lNdseQYCuxzgsuNK8bTXChtLTjpJz6NmXKA73qLa3rCA==,
+      }
+    dependencies:
+      asn1js: 3.0.5
+      pvtsutils: 1.3.2
+      tslib: 2.5.0
+    dev: false
+    optional: true
+
+  /@peculiar/json-schema@1.1.12:
+    resolution:
+      {
+        integrity: sha512-coUfuoMeIB7B8/NMekxaDzLhaYmp0HZNPEjYRm9goRou8UZIC3z21s0sL9AWoCw4EG876QyO3kYrc61WNF9B/w==,
+      }
+    engines: { node: ">=8.0.0" }
+    dependencies:
+      tslib: 2.5.0
+    dev: false
+    optional: true
+
+  /@peculiar/webcrypto@1.4.3:
+    resolution:
+      {
+        integrity: sha512-VtaY4spKTdN5LjJ04im/d/joXuvLbQdgy5Z4DXF4MFZhQ+MTrejbNMkfZBp1Bs3O5+bFqnJgyGdPuZQflvIa5A==,
+      }
+    engines: { node: ">=10.12.0" }
+    requiresBuild: true
+    dependencies:
+      "@peculiar/asn1-schema": 2.3.6
+      "@peculiar/json-schema": 1.1.12
+      pvtsutils: 1.3.2
+      tslib: 2.5.0
+      webcrypto-core: 1.7.7
+    dev: false
+    optional: true
+
   /@types/minimatch@3.0.5:
     resolution:
       {
@@ -97,6 +141,19 @@ packages:
       }
     engines: { node: ">=8" }
     dev: true
+
+  /asn1js@3.0.5:
+    resolution:
+      {
+        integrity: sha512-FVnvrKJwpt9LP2lAMl8qZswRNm3T4q9CON+bxldk2iwk3FFpuwhx2FfinyitizWHsVYyaY+y5JzDR0rCMV5yTQ==,
+      }
+    engines: { node: ">=12.0.0" }
+    dependencies:
+      pvtsutils: 1.3.2
+      pvutils: 1.1.3
+      tslib: 2.5.0
+    dev: false
+    optional: true
 
   /astral-regex@2.0.0:
     resolution:
@@ -362,6 +419,21 @@ packages:
       }
     engines: { node: ">=10" }
     dev: true
+
+  /gun@0.2020.1239:
+    resolution:
+      {
+        integrity: sha512-e4BsRL4P6oLT1m7G+0H8VhhdfFEHhcPc5tOnmgTO6q9ZQrT+Q0B5XKrpAV3NcuLq3SpnOevlz6+Ul5CVaavcXQ==,
+      }
+    engines: { node: ">=0.8.4" }
+    dependencies:
+      ws: 7.5.9
+    optionalDependencies:
+      "@peculiar/webcrypto": 1.4.3
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+    dev: false
 
   /has-flag@4.0.0:
     resolution:
@@ -791,6 +863,25 @@ packages:
       once: 1.4.0
     dev: true
 
+  /pvtsutils@1.3.2:
+    resolution:
+      {
+        integrity: sha512-+Ipe2iNUyrZz+8K/2IOo+kKikdtfhRKzNpQbruF2URmqPtoqAs8g3xS7TJvFF2GcPXjh7DkqMnpVveRFq4PgEQ==,
+      }
+    dependencies:
+      tslib: 2.5.0
+    dev: false
+    optional: true
+
+  /pvutils@1.1.3:
+    resolution:
+      {
+        integrity: sha512-pMpnA0qRdFp32b1sJl1wOJNxZLQ2cbQx+k6tjNtZ8CpvVhNqEPRgivZ2WOUev2YMajecdH7ctUPDvEe87nariQ==,
+      }
+    engines: { node: ">=6.0.0" }
+    dev: false
+    optional: true
+
   /restore-cursor@3.1.0:
     resolution:
       {
@@ -978,7 +1069,6 @@ packages:
       {
         integrity: sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg==,
       }
-    dev: true
 
   /type-fest@0.21.3:
     resolution:
@@ -987,6 +1077,20 @@ packages:
       }
     engines: { node: ">=10" }
     dev: true
+
+  /webcrypto-core@1.7.7:
+    resolution:
+      {
+        integrity: sha512-7FjigXNsBfopEj+5DV2nhNpfic2vumtjjgPmeDKk45z+MJwXKKfhPB7118Pfzrmh4jqOMST6Ch37iPAHoImg5g==,
+      }
+    dependencies:
+      "@peculiar/asn1-schema": 2.3.6
+      "@peculiar/json-schema": 1.1.12
+      asn1js: 3.0.5
+      pvtsutils: 1.3.2
+      tslib: 2.5.0
+    dev: false
+    optional: true
 
   /which@2.0.2:
     resolution:
@@ -1029,6 +1133,22 @@ packages:
         integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==,
       }
     dev: true
+
+  /ws@7.5.9:
+    resolution:
+      {
+        integrity: sha512-F+P9Jil7UiSKSkppIiD94dN07AwvFixvLIj1Og1Rl9GGMuNipJnV9JzjD6XuqmAeiswGvUmNLjr5cFuXwNS77Q==,
+      }
+    engines: { node: ">=8.3.0" }
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: ^5.0.2
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
+    dev: false
 
   /yaml@2.2.1:
     resolution:

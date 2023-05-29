@@ -1,19 +1,19 @@
-import express from "express";
-import Gun from "gun";
-import cors from "cors";
+// server/index.js
+const express = require("express");
+const Gun = require("gun");
 
+// Create a new Express app
 const app = express();
-const port = process.env.PORT || 1234;
+// app.use(express.json());
 
-app.use(cors());
+// Attach Gun to the server
 app.use(Gun.serve);
 
-app.get("/", (req, res) => {
-  res.status(200).send("> DEBUG: This Gun Node is live.");
-});
+// Other server configuration goes here...
 
-const server = app.listen(port, () => {
-  console.log(`> DEBUG: Gun Node is listening on port: ${port}`);
+// Start the server
+const server = app.listen(8000, () => {
+  console.log("Server is running on http://localhost:8000");
 });
 
 Gun({ web: server });
