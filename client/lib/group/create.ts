@@ -28,24 +28,20 @@ export function createGroup(
     invitationCode,
   };
 
+  // Set the group data, members, admins, and events all in a chain
   gun.get("groups").get(groupId).put(groupData);
-
-  // Add the organizer to the members and admins
   gun
     .get("groups")
     .get(groupId)
     .get("members")
     .put({ [organizerId]: true });
-
   gun
     .get("groups")
     .get(groupId)
     .get("admins")
     .put({ [organizerId]: true });
-
-  // Initialize events as an empty object
   gun.get("groups").get(groupId).get("events").put({});
 
-  // Resolve with the group ID and invitation code
+  // Immediately resolve with the group ID and invitation code
   return Promise.resolve({ groupId, invitationCode });
 }
